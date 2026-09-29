@@ -1,0 +1,48 @@
+STELLAR SURVIVOR - JOGO MOBILE ROGUELITE ESPACIAL (HORIZONTAL / LANDSCAPE)
+=============================================================================
+
+1) COMO JOGAR IMEDIATAMENTE NO COMPUTADOR OU NAVEGADOR DO CELULAR:
+-----------------------------------------------------------------
+- Opção A: Basta dar 2 cliques no arquivo "www/index.html" para abrir em qualquer navegador (Chrome, Edge, Firefox, Safari).
+- Opção B: Para testar com servidor local e acessar pelo Wi-Fi no celular:
+    cd www
+    npx serve
+    (ou: python -m http.server 8080)
+    Acesse pelo navegador do seu celular usando o IP local (ex: http://192.168.1.X:8080).
+
+2) COMO CONTROLAR O JOGO:
+-------------------------
+- NO CELULAR (Touch Screen):
+  * Lado ESQUERDO da tela: Toque e arraste o D-pad / Joystick virtual flutuante para pilotar a nave em 360°.
+  * Lado DIREITO da tela:
+    - Botão [⚡ DASH]: Esquiva rápida com propulsores (invulnerabilidade temporária).
+    - Botão [💥 BOMBA]: Pulso Eletromagnético (EMP) que destrói projéteis e limpa a tela.
+    - As armas miram e disparam automaticamente nos inimigos mais próximos!
+  * TOPO DIREITO: Botão de Pausa [⏸].
+
+- NO COMPUTADOR (Teclado / Mouse / Gamepad):
+  * W, A, S, D ou Setas: Movimentação da nave.
+  * Barra de Espaço ou Shift: Dash / Esquiva.
+  * Tecla Q ou E: Bomba Nova / EMP.
+  * Tecla P ou Esc: Pausa.
+  * Suporte nativo a Gamepad/Controle USB ou Bluetooth conectado!
+
+3) COMO GERAR O APK PARA ANDROID COM O CAPACITOR:
+-------------------------------------------------
+1. Tenha o Node.js e o Android Studio instalados no PC.
+2. Abra o terminal nesta pasta (stellar_survivor) e execute:
+     npm install
+     npx cap add android
+     npx cap sync
+     npx cap open android
+3. O Android Studio vai abrir o projeto.
+4. Para garantir que o jogo fique sempre travado em modo Paisagem (Horizontal), verifique se no arquivo:
+   android/app/src/main/AndroidManifest.xml
+   a tag <activity> possui:
+   android:screenOrientation="sensorLandscape"
+5. No menu do Android Studio:
+   Build > Build Bundle(s) / APK(s) > Build APK(s)
+6. Pronto! O APK gerado estará em:
+   android/app/build/outputs/apk/debug/app-debug.apk
+   (Basta transferir para o celular e instalar!)
+
